@@ -18,13 +18,73 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="text-center">Survey Questions</h1>
-        <h4 class="text-center">Tell us about how you prefer socializing!</h4>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Survey Questions</h1>
+            <h3>Tell us how you prefer socializing!</h3>
+            <hr>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3><strong>Question 1: </strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-right">
+                            <input type="text" id="person-search" class="form-control">
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-md" id="survey-btn"><span
+                                    class="fa fa-search"></span> Let's Find Your Kindred Spirit! </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><strong>Questions</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="characteristic">Type Indicators</h2>
+                        <div id="stats">
+                            <h3><strong>Extroversion/Introversion</strong> <span id="EI">1-5</span></h3>
+                            <h3><strong>Sensing/Intuition: </strong> <span id="SI">1-5</span></h3>
+                            <h3><strong>Thinking/Feeling:</strong> <span id="TF">1-5</span></h3>
+                            <h3><strong>Judging/Perceiving</strong> <span id="JP">1-5</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="surveyQuestions"></div>
-    <div id="surveyResult"></div>
-    <script type="text/javascript" src="../../server.js">
+
+    <script type="text/javascript">
+    $("#survey-btn").on("click", function() {
+    let surveyEntry = $("#person-search").val().trim();
+
+    // Using a RegEx Pattern to remove spaces from searchedCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    surveyEntry = surveyEntry.replace(/\s+/g, "").toLowerCase();
+
+    $.get("/survey" + searchedCharacter, function(data) {
+      console.log(data);
+      if (data) {
+        $("#stats").show();
+        $("#EI").text(data.name);
+        $("#SI").text(data.role);
+        $("#TF").text(data.age);
+        $("#JP").text(data.forcePoints);
+      } else {
+        $("#name").text(
+          "The force is not strong with this one. Your character was not found.");
+        $("#stats").hide();
+      }
+    });
+  });
+
     </script>
 </body>
 
