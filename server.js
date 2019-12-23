@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 
 // Require the routes' files so data can be imported
-let apiRoutes = require('./app/routing/apiRoutes');
-let htmlRoutes = require('./app/routing/htmlRoutes');
+let apiRoutes = require('./app/routing/apiRoutes')(app);
+let htmlRoutes = require('./app/routing/htmlRoutes')(app);
 
 // Sets up the Express App
 let app = express();
@@ -17,4 +17,6 @@ app.use(express.json());
 // Use the routes' files 
 app.use(apiRoutes);
 app.use(htmlRoutes);
+
+
 
