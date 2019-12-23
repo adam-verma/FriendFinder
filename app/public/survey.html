@@ -19,72 +19,248 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Survey Questions</h1>
-            <h3>Tell us how you prefer socializing!</h3>
-            <hr>
-        </div>
 
-        <div class="row">
+        <h1 class="font-weight-bold">
+            Shed some light on yourself:
+        </h1>
+        <hr>
+        <!--Must Include Name and Image-->
+        <h3><strong>About You</strong></h3>
+        <label>Name (Required)</label>
+        <input type="text" id="name" class="form-control" required="">
 
-            <div class="col-12">
+        <label>Link to Profile Image (Required)</label>
+        <input type="url" id="photo" class="form-control" required="">
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h3><strong>Question 1: </strong></h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="text-right">
-                            <input type="text" id="person-search" class="form-control">
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-md" id="survey-btn"><span
-                                    class="fa fa-search"></span> Let's Find Your Kindred Spirit! </button>
-                        </div>
-                    </div>
+        <hr>
+
+        <!--Begin Filling Survey Questions-->
+
+        <h3 class="font-weight-bold">Survey Questions</h3>
+        <h7> Strongly Disagree 1 > 2 > 3 > 4 > 5 Strongly Agree </h7>
+        <h4><strong>Question 1</strong></h4>
+        <h5>You are someone who doesn't get distracted easily by your phone.</h5>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <h3><strong>Question 2</strong></h3>
+        <h4>If you had a day off, you would spend it actively playing sports, exercising, or exploring the outdoors.</h4>
+        <select class="chosen-select" id="q2">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <h3><strong>Question 3</strong></h3>
+        <h4>You are passionate about 'hot' social justice topics.</h4>
+        <select class="chosen-select" id="q3">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+
+        <h3><strong>Question 4</strong></h3>
+        <h4>You do not like eating spicy food.</h4>
+        <select class="chosen-select" id="q4">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+
+        <h3><strong>Question 5</strong></h3>
+        <h4>When you tuck yourself into bed, you are out like a light.</h4>
+        <select class="chosen-select" id="q5">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+
+        <h3><strong>Question 6</strong></h3>
+        <h4>You do not hesitate speaking your mind to anyone about a harsh truth.</h4>
+        <select class="chosen-select" id="q6">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <h3><strong>Question 7</strong></h3>
+        <h4>Dogs are more loveable than cats.</h4>
+        <select class="chosen-select" id="q7">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <h3><strong>Question 8</strong></h3>
+        <h4>When you enter a party, you are more likely to head to the food bar than try making new friends.</h4>
+        <select class="chosen-select" id="q8">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+
+        <h3><strong>Question 9</strong></h3>
+        <h4>You find comfort in your ability to make people laugh.</h4>
+        <select class="chosen-select" id="q9">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <h3><strong>Question 10</strong></h3>
+        <h4>You like being spontaneous when plans don't turn out a certain way.</h4>
+        <select class="chosen-select" id="q10">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <br>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary btn-md" id="survey-submit"><span class="fa fa-search"></span> Let's
+            Find Your Kindred Spirit! </button>
+
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends List</a> | <a
+                        href="https://github.com/adam-verma/FriendFinder">GitHub
+                        Repo</a></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3><strong>Questions</strong></h3>
-                    </div>
-                    <div class="card-body">
-                        <h2 id="characteristic">Type Indicators</h2>
-                        <div id="stats">
-                            <h3><strong>Extroversion/Introversion</strong> <span id="EI">1-5</span></h3>
-                            <h3><strong>Sensing/Intuition: </strong> <span id="SI">1-5</span></h3>
-                            <h3><strong>Thinking/Feeling:</strong> <span id="TF">1-5</span></h3>
-                            <h3><strong>Judging/Perceiving</strong> <span id="JP">1-5</span></h3>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img"
+                        src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
+
         </div>
     </div>
 
+
     <script type="text/javascript">
-    $("#survey-btn").on("click", function() {
-    let surveyEntry = $("#person-search").val().trim();
 
-    // Using a RegEx Pattern to remove spaces from searchedCharacter
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    surveyEntry = surveyEntry.replace(/\s+/g, "").toLowerCase();
+        // Capture the form inputs
+        $("#survey-submit").on("click", function (event) {
+            event.preventDefault();
 
-    $.get("/survey" + searchedCharacter, function(data) {
-      console.log(data);
-      if (data) {
-        $("#stats").show();
-        $("#EI").text(data.name);
-        $("#SI").text(data.role);
-        $("#TF").text(data.age);
-        $("#JP").text(data.forcePoints);
-      } else {
-        $("#name").text(
-          "The force is not strong with this one. Your character was not found.");
-        $("#stats").hide();
-      }
-    });
-  });
+            // Form validation
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
 
+                $(".chosen-select").each(function () {
+
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+
+            // If all required fields are filled
+            if (validateForm()) {
+                // Create an object for the user"s data
+                var userData = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
+
+                let currentURL = window.location.origin;
+                // AJAX post the data to the friends API.
+                $.post(currentURL + "/api/friends", userData, function (data) {
+
+                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                    $("#match-name").text(data.name);
+                    $("#match-img").attr("src", data.photo);
+
+                    // Show the modal with the best match
+                    $("#results-modal").modal("toggle");
+
+                });
+            } else {
+                alert("Please fill out all fields before submitting!");
+            }
+        });
     </script>
 </body>
 
