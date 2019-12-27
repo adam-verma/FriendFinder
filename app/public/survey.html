@@ -209,7 +209,7 @@
 
             // Form validation
             function validateForm() {
-                var isValid = true;
+                let isValid = true;
                 $(".form-control").each(function () {
                     if ($(this).val() === "") {
                         isValid = false;
@@ -228,7 +228,7 @@
             // If all required fields are filled
             if (validateForm()) {
                 // Create an object for the user"s data
-                var userData = {
+                let userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
                     scores: [
